@@ -65,10 +65,10 @@ function CheckSystem()
 	echo '================================================================';
 	
 	RamSum=$[$RamTotal+$RamSwap];
-	[ "$SysBit" == '32' ] && [ "$RamSum" -lt '250' ] && \
+	[ "$SysBit" == '32' ] && [ "$RamSum" -lt '50' ] && \
 	echo -e "[Error] Not enough memory install AMH. \n(32bit system need memory: ${RamTotal}MB*RAM + ${RamSwap}MB*Swap > 250MB)" && exit;
 
-	if [ "$SysBit" == '64' ] && [ "$RamSum" -lt '480' ];  then
+	if [ "$SysBit" == '64' ] && [ "$RamSum" -lt '80' ];  then
 		echo -e "[Error] Not enough memory install AMH. \n(64bit system need memory: ${RamTotal}MB*RAM + ${RamSwap}MB*Swap > 480MB)";
 		[ "$RamSum" -gt '250' ] && echo "[Notice] Please use 32bit system.";
 		exit;
